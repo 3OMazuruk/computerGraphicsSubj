@@ -45,7 +45,7 @@ public class Main implements GLEventListener, KeyListener {
         final JFrame frame = new JFrame(windowTitle);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(gc);
-        frame.addKeyListener(main);
+        //frame.addKeyListener(main);
         frame.setSize(windowWidth, windowHeight);
         frame.pack();
         frame.setVisible(true);

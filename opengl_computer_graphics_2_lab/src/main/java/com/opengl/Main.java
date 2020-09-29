@@ -49,7 +49,7 @@ public class Main implements GLEventListener{
                                          new Point(-0.3, 0.25),
                                          new Point(0, -0.25));
 
-        drawDeepTringle(gl, triangle, Colors.GREEN,0);
+        drawDeepTringle(gl, triangle, Colors.ORANGE,0);
 
         gl.glFlush();
     }
