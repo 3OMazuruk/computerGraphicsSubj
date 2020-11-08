@@ -105,6 +105,10 @@ public class Cube implements GLEventListener {
 
         drawSolidCylinder(gl, glu, 0.3d, 0, slices, stacks);
 
+        drawCone(gl, glu, 0.5d, 1.5, slices, stacks);
+
+        drawCone2(gl, glu, 0.3d, 1.5, slices, stacks);
+
         gl.glFlush();
 
         rquad -= 0.15f;
@@ -188,6 +192,28 @@ public class Cube implements GLEventListener {
         glu.gluQuadricDrawStyle(quadObj, GLU.GLU_FILL);
         glu.gluQuadricNormals(quadObj, GLU.GLU_SMOOTH);
         glu.gluCylinder(quadObj, radius, radius, 0.2, slices, stacks);
+    }
+
+    private void drawCone(GL2 gl, GLU glu, double radius, double height, int slices, int stacks) {
+        gl.glTranslatef( -2f, -2f, -2f );
+        gl.glColor3f(1f,0f,0f); //red color
+        // Rotate The Cube On X, Y & Z
+        gl.glNormal3d(-1, 0, 0);
+        quadObjInit(glu);
+        glu.gluQuadricDrawStyle(quadObj, GLU.GLU_FILL);
+        glu.gluQuadricNormals(quadObj, GLU.GLU_SMOOTH);
+        glu.gluCylinder(quadObj, radius, 0.0, 0.5, slices, stacks);
+    }
+
+    private void drawCone2(GL2 gl, GLU glu, double radius, double height, int slices, int stacks) {
+        gl.glTranslatef( 0f, 2f, 2f );
+        gl.glColor3f(1f,0f,0f); //red color
+        // Rotate The Cube On X, Y & Z
+        gl.glNormal3d(-1, 0, 0);
+        quadObjInit(glu);
+        glu.gluQuadricDrawStyle(quadObj, GLU.GLU_FILL);
+        glu.gluQuadricNormals(quadObj, GLU.GLU_SMOOTH);
+        glu.gluCylinder(quadObj, radius, 0.0, 0.5, slices, stacks);
     }
 
     public static void main( String[] args ) {
